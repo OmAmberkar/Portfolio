@@ -66,7 +66,7 @@ function OrbitRing({ radius, tilt, speed }: ElectronProps) {
 
   return (
     <mesh ref={mesh} rotation={[tilt[0] + Math.PI / 2, tilt[1], 0]}>
-      <torusGeometry args={[radius, 0.003, 4, 128]} />
+      <torusGeometry args={[radius, 0.003, 4, 360]} />
       <meshStandardMaterial
         color="#ffffff"
         emissive="#ffffff"
@@ -91,10 +91,11 @@ function AtomScene() {
   });
 
   const electrons = [
-    { radius: 0.6, speed: 1.2, tilt: [0.5, 0.2] as [number, number] },
-    { radius: 0.8, speed: 0.9, tilt: [1.0, -0.4] as [number, number] },
-    { radius: 1.0, speed: 0.7, tilt: [0.2, 1.0] as [number, number] },
-    { radius: 1.2, speed: 0.5, tilt: [0.8, -0.2] as [number, number] },
+    { radius: 0.5, speed: 2.1, tilt: [0.5, 0.2] as [number, number] },
+    { radius: 0.7, speed: 1.5, tilt: [1.0, -0.4] as [number, number] },
+    { radius: 0.9, speed: 0.7, tilt: [0.2, 1.0] as [number, number] },
+    { radius: 1.1, speed: 0.4, tilt: [0.8, -0.2] as [number, number] },
+    
   ];
 
   return (
@@ -109,7 +110,7 @@ function AtomScene() {
         <meshStandardMaterial
           color="#ffff00"
           emissive="#ffeb3b"
-          emissiveIntensity={2.8}
+          emissiveIntensity={1.8}
           metalness={0.8}
           roughness={0.15}
         />
@@ -127,7 +128,7 @@ function AtomScene() {
       <Sparkles
         count={80}
         size={1}
-        speed={0.5}
+        speed={0.005}
         color="#88ccff"
         scale={[3, 3, 3]}
         opacity={0.7}
@@ -151,7 +152,7 @@ function AtomScene() {
 export default function AtomCanvas() {
   return (
     <Canvas camera={{ position: [0, 0, 3], fov: 45 }} style={{ height: 400 }}>
-      <Float speed={1.5} rotationIntensity={1.5} floatIntensity={1}>
+      <Float speed={0.5} rotationIntensity={0.1} floatIntensity={1}>
         <AtomScene />
       </Float>
     </Canvas>

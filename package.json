@@ -17,7 +17,7 @@
     "@tailwindcss/vite": "^4.1.8",
     "dotenv": "^16.5.0",
     "emailjs": "^4.0.3",
-    "framer-motion": "^12.15.0",
+    "framer-motion": "^12.18.1",
     "git": "^0.1.5",
     "init": "^0.1.2",
     "lucide-react": "^0.511.0",
