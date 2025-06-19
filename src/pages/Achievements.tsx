@@ -1,6 +1,6 @@
 const Achievements = () => {
   return (
-    <div className="text-center space-y-8 p-4">
+    <div className="text-center space-y-8 p-4 bg-gray-50">
       <h2 className="text-3xl font-bold">My Coding Journey</h2>
       
       <div>
