@@ -36,7 +36,7 @@ const qualities = [
 ];
 
 const About: React.FC = () => (
-  <section id="about" className="py-20 antialiased bg-gradient-to-b from-blue-900 to-black">
+  <section id="about" className="py-20 antialiased bg-gradient-to-b from-blue-800 to-black">
     <div className="max-w-6xl mx-auto px-6 lg:flex lg:items-center lg:gap-12">
       {/* Image Panel */}
       <div className="lg:w-1/2 mb-8 lg:mb-0 flex justify-center lg:justify-start">

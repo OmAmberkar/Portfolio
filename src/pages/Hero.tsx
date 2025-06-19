@@ -5,7 +5,7 @@ import HeroCanvas from "../components/HeroCanvas";
 const Hero: React.FC = () => (
   <section
     id="hero"
-    className="min-h-screen bg-gradient-to-t from-blue-900 to-black text-blue-200 flex items-center px-6"
+    className="min-h-screen bg-gradient-to-t from-blue-800 to-black text-blue-200 flex items-center px-6"
   >
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
       <div>
