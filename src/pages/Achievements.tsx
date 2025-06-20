@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Achievements = () => {
   return (
-    <section className="min-h-[70vh] bg-gradient-to-b from-black to-blue-950 text-blue-200 py-16 px-6">
+    <section className="min-h-[70vh] bg-gradient-to-t from-black to-blue-800 text-blue-200 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center space-y-12">
         <motion.h2
           className="text-4xl pb-4 font-bold text-center bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 text-transparent bg-clip-text mb-12"
@@ -10,7 +10,7 @@ const Achievements = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          My Coding Journey 🚀
+          🏃🏿‍♂️‍➡️ My Coding Journey
         </motion.h2>
 
         {/* LeetCode Stats */}

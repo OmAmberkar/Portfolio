@@ -5,10 +5,10 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-blue-950 to-black text-white py-20 px-6 text-center"
+      className="bg-gradient-to-t from-blue-500 to-black text-white py-20 px-6 text-center"
     >
       <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-500 text-transparent bg-clip-text">
-        Contact Me
+        👋🏽 Contact Me
       </h2>
 
       <p className="text-lg text-gray-300 mb-8">

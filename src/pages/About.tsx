@@ -36,7 +36,7 @@ const qualities = [
 ];
 
 const About: React.FC = () => (
-  <section id="about" className="py-20 antialiased bg-gradient-to-b from-blue-800 to-black">
+  <section id="about" className="py-20 antialiased bg-gradient-to-b from-blue-950 to-black">
     <div className="max-w-6xl mx-auto px-6 lg:flex lg:items-center lg:gap-12">
       {/* Image Panel */}
       <div className="lg:w-1/2 mb-8 lg:mb-0 flex justify-center lg:justify-start">
@@ -50,7 +50,7 @@ const About: React.FC = () => (
       {/* Text Panel */}
       <div className="lg:w-1/2 text-center lg:text-left text-pink-100">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 text-transparent bg-clip-text mb-4">
-          About Me
+          🙋‍♂️ About Me 
         </h2>
         <p className="mb-4">
           I’m Om Amberkar, a final-year Information Technology engineering
