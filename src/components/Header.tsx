@@ -10,6 +10,7 @@ const Header: React.FC = () => {
   const closeMenu = () => setIsOpen(false);
 
   const navItems = [
+    { id:'hero', label:'Home'},
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },

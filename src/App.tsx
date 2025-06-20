@@ -10,6 +10,7 @@ import './App.css';
 import Achievements from './pages/Achievements';
 import Loader from './components/Loader'
 import { AnimatePresence } from 'framer-motion';
+import Experience from './pages/Experience';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -34,6 +35,7 @@ const App: React.FC = () => {
           <Header />
           <Hero />
           <About />
+          <Experience />
           <Projects />
           <Skills />
           <Achievements />
