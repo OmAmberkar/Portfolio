@@ -17,7 +17,7 @@ const experiences: ExperienceItem[] = [
   {
     company: "Intellectsia AI Services Pvt. Ltd.",
     role: "Software Development & Deployment Intern",
-    duration: "November 2024 – April 2024",
+    duration: "November 2024 – April 2025",
     description: `
       Worked across the full stack to deliver production-grade features. 
       Built responsive UI components with React and Angular using Tailwind CSS. 

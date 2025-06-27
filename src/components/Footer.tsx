@@ -5,6 +5,7 @@ import {
   FaGithub,
   FaDiscord,
   FaLinkedin,
+  FaTwitter,
 } from "react-icons/fa";
 
 const Footer: React.FC = () => {
@@ -109,7 +110,9 @@ const Footer: React.FC = () => {
           >
             <FaInstagram size={20} />
           </a>
-
+            <a href="https://twitter.com/@BuildWithOmi" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-white">
+            <FaTwitter size={20} />
+          </a>
           <div className="flex items-center space-x-2 text-cyan-400">
             <FaDiscord size={20} />
             <span>omi0223</span>

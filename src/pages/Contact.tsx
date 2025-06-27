@@ -127,12 +127,12 @@ function RotatingModel({ shouldRotate }: { shouldRotate: boolean }) {
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mldnagon");
-  const [shouldRotate, setShouldRotate] = useState(false);
+  const [shouldRotate, setShouldRotate] = useState(true);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleSubmit(e);
-    setShouldRotate(true);
+    setShouldRotate(false);
   };
 
   return (

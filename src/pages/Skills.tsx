@@ -10,7 +10,7 @@ import {
 import SkillsBackgroundScene from "../components/3DBackground";
 
 const skills = [
-  { name: "React", icon: <FaReact className="text-cyan-400 animate-spin-slow" /> },
+  { name: "React", icon: <FaReact className="text-cyan-400 animate-spin" /> },
   { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
   { name: "JavaScript", icon: <SiJavascript className="text-yellow-300" /> },
