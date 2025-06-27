@@ -10,7 +10,7 @@ import {
 import SkillsBackgroundScene from "../components/3DBackground";
 
 const skills = [
-  { name: "React", icon: <FaReact className="text-cyan-400" /> },
+  { name: "React", icon: <FaReact className="text-cyan-400 animate-spin-slow" /> },
   { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
   { name: "JavaScript", icon: <SiJavascript className="text-yellow-300" /> },
@@ -40,23 +40,43 @@ export default function SkillMarquee() {
         🛠️ Tech Stack & Skills
       </h2>
 
-      {/* 🔵 Animated Marquee */}
-      <motion.div
-        className="flex gap-12 w-max animate-marquee"
-        initial={{ x: 0 }}
-        animate={{ x: "-50%" }}
-        transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-      >
-        {[...skills, ...skills].map((skill, idx) => (
-          <div
-            key={idx}
-            className="text-4xl md:text-5xl hover:scale-125 transition-transform duration-300 cursor-pointer"
-            title={skill.name}
-          >
-            {skill.icon}
-          </div>
-        ))}
-      </motion.div>
+      {/* 🔵 Marquee Row 1 (left to right) */}
+      <div className="overflow-hidden w-full h-24">
+        <motion.div
+          className="flex gap-12 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+        >
+          {[...skills, ...skills].map((skill, idx) => (
+            <div
+              key={`forward-${idx}`}
+              className="text-6xl md:text-7xl hover:scale-125 hover:animate-bounce transition-transform duration-300 cursor-pointer"
+              title={skill.name}
+            >
+              {skill.icon}
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* 🔵 Marquee Row 2 (right to left) */}
+      <div className="overflow-hidden w-full h-24 mt-6">
+        <motion.div
+          className="flex gap-12 w-max"
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+        >
+          {[...skills, ...skills].map((skill, idx) => (
+            <div
+              key={`reverse-${idx}`}
+              className="text-6xl md:text-7xl hover:scale-125 hover:animate-bounce transition-transform duration-300 cursor-pointer"
+              title={skill.name}
+            >
+              {skill.icon}
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }

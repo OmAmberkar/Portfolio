@@ -11,6 +11,7 @@
     "start:dev": "nodemon --watch src --ext ts,json --exec ts-node src/index.ts"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@heroicons/react": "^2.2.0",
     "@react-spring/three": "^10.0.1",
     "@react-three/drei": "^10.3.0",

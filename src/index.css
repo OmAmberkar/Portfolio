@@ -9,3 +9,9 @@ html, body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
