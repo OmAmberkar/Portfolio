@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
+    "clean": "rm -rf dist && tsc --noEmit",
     "preview": "vite preview",
     "start:dev": "nodemon --watch src --ext ts,json --exec ts-node src/index.ts"
   },

@@ -1,21 +1,13 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx",
     "module": "ESNext",
-    "target": "ES6",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "preserve",
-    "types": ["node"],
-    "allowJs": true,
-    "noEmit": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "forceConsistentCasingInFileNames": true,
+    "target": "ESNext",
     "strict": true,
-    "skipLibCheck": true
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }
