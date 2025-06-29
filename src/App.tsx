@@ -31,7 +31,7 @@ const App: React.FC = () => {
       </AnimatePresence>
 
       {!loading && (
-        <main>
+        <main className="bg-gradient-to-b from-black via-blue-950 to-blue-600 ">
           <Header />
           <Hero />
           <About />
