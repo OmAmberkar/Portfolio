@@ -4,12 +4,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-
 interface Repo {
   name: string;
   description: string;
   html_url: string;
   language: string;
+  homepage?: string;
 }
 
 const languageColors: Record<string, string> = {
@@ -28,10 +28,14 @@ const Projects: React.FC = () => {
   useEffect(() => {
     async function fetchRepos() {
       try {
-        const res = await fetch(`https://api.github.com/users/OmAmberkar/repos?sort=updated`);
+        const res = await fetch(
+          `https://api.github.com/users/OmAmberkar/repos?sort=updated`
+        );
         const data = await res.json();
         // Optional: Filter out forked/private repos
-        const filtered = data.filter((repo: any) => !repo.fork && !repo.private);
+        const filtered = data.filter(
+          (repo: any) => !repo.fork && !repo.private
+        );
         setRepos(filtered);
       } catch (err) {
         console.error("GitHub fetch failed", err);
@@ -61,7 +65,9 @@ const Projects: React.FC = () => {
             className="bg-white/5 border border-white/50 backdrop-blur-3xl text-white p-8 -mx-2 rounded-xl shadow-xl hover:scale-[1.2] transition-all duration-700"
           >
             <h3 className="text-xl font-bold mb-2">{repo.name}</h3>
-            <p className="text-sm text-gray-300 mb-4">{repo.description || "No description provided."}</p>
+            <p className="text-sm text-gray-300 mb-4">
+              {repo.description || "No description provided."}
+            </p>
             <span
               className={`text-xs px-2 py-1 rounded-full text-white ${
                 languageColors[repo.language] || "bg-gray-600"
@@ -69,7 +75,8 @@ const Projects: React.FC = () => {
             >
               #{repo.language || "Unknown"}
             </span>
-            <div className="mt-4">
+
+            <div className="mt-4 flex flex-col gap-2">
               <a
                 href={repo.html_url}
                 target="_blank"
@@ -78,6 +85,17 @@ const Projects: React.FC = () => {
               >
                 View Repository →
               </a>
+
+              {repo.homepage && (
+                <a
+                  href={repo.homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-400 hover:text-green-200 underline text-sm"
+                >
+                  Live Demo →
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
