@@ -26,9 +26,10 @@ const Hero: React.FC = () => (
         </p>
 
         <a
-          href="/Om Amberkar Resume.pdf"
-          download
-          className="inline-block mt-8 bg-transperent border-blue-300 border-3 text-blue-100 py-2 px-4 rounded-lg font-medium hover:bg-blue-100 hover:text-black transition"
+          href="https://drive.google.com/file/d/1efkCt9htsUSDTFPs-efI5oXcLnMfvT9A/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-8 bg-transparent border-2 border-blue-300 text-blue-100 py-2 px-4 rounded-lg font-medium hover:bg-blue-100 hover:text-black transition"
         >
           Download Resume
         </a>
