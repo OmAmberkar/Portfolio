@@ -26,7 +26,7 @@ const Hero: React.FC = () => (
         </p>
 
         <a
-          href="https://drive.google.com/file/d/1efkCt9htsUSDTFPs-efI5oXcLnMfvT9A/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1NmW5iOda9E8kU-II1wcTxBPH9WcGSpia/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-8 bg-transparent border-2 border-blue-300 text-blue-100 py-2 px-4 rounded-lg font-medium hover:bg-blue-100 hover:text-black transition"

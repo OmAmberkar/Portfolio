@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 
 const Achievements = () => {
   return (
@@ -23,6 +24,8 @@ const Achievements = () => {
           <h2 className="text-4xl pb-4 font-bold text-center bg-blue-100 text-transparent bg-clip-text mb-12">
               Leet Code Stats
           </h2>
+          <Tilt tiltMaxAngleX={30} tiltMaxAngleY={30} scale={1.2} transitionSpeed={100} glareEnable={true} glareMaxOpacity={0.} className="w-full" >
+          
           <div className="max-w-[500px] mx-auto bg-[#1e1e1e] p-4 rounded-xl shadow-lg border border-blue-800">
             <img
               src="https://leetcard.jacoblin.cool/Om_Amberkar?theme=dark&font=baloo"
@@ -30,7 +33,10 @@ const Achievements = () => {
               className="w-full rounded-md"
             />
           </div>
+           </Tilt>
         </motion.div>
+       
+        
 
         {/* GitHub Heatmap */}
         <motion.div
@@ -42,6 +48,8 @@ const Achievements = () => {
           <h2 className="text-4xl pb-4 font-bold text-center bg-blue-100 to-blue-500 text-transparent bg-clip-text mb-12">
             Github HeatMap
           </h2>
+          <Tilt tiltMaxAngleX={30} tiltMaxAngleY={30} scale={1.2} transitionSpeed={100} glareEnable={true} glareMaxOpacity={0.} className="w-full" >
+        
           <div className="max-w-[800px] mx-auto bg-[#1e1e1e] p-4 rounded-xl shadow-lg border border-blue-800">
             <img
               src="https://ghchart.rshah.org/OmAmberkar"
@@ -49,7 +57,9 @@ const Achievements = () => {
               className="w-full rounded-md"
             />
           </div>
+          </Tilt>
         </motion.div>
+         
       </div>
     </section>
   );

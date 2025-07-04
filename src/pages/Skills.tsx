@@ -29,7 +29,7 @@ const skills = [
 
 export default function SkillMarquee() {
   return (
-    <section className="relative min-h-[50vh] bg-gradient-to-b from-black to-blue-800 overflow-hidden py-16 px-4 md:px-10">
+    <section id="skills" className="relative min-h-[50vh] bg-gradient-to-b from-black to-blue-800 overflow-hidden py-16 px-4 md:px-10">
       {/* 🔵 3D Background Layer */}
       <div className="absolute inset-0 -z-10">
         <SkillsBackgroundScene />
