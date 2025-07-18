@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 interface Repo {
   name: string;
   description: string;
-  html_url: string;
+  html_url: string; 
   language: string;
   homepage?: string;
 }
