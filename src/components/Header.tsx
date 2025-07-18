@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-scroll';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import { Link } from "react-scroll";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,12 +10,12 @@ const Header: React.FC = () => {
   const closeMenu = () => setIsOpen(false);
 
   const navItems = [
-    { id:'hero', label:'Home'},
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' },
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "skills", label: "Skills" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          MyPortfolio
+          <span className="text-blue-400">OMi's </span>Portfolio
         </motion.h1>
 
         {/* Desktop Nav */}
@@ -43,7 +43,10 @@ const Header: React.FC = () => {
                 to={item.id}
                 smooth
                 duration={500}
-                className="text-blue-100 font-medium hover:text-yellow-200 cursor-pointer transition "
+                spy={true}
+                activeClass="active"
+                onClick={closeMenu}
+                className="block text-blue-200 font-medium hover:text-yellow-200 cursor-pointer transition [&.active]:text-yellow-200 [&.active]:font-bold "
               >
                 {item.label}
               </Link>
@@ -69,7 +72,7 @@ const Header: React.FC = () => {
           <motion.div
             key="mobile-nav"
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-gradient-to-t from-blue-900 to-black  shadow-sm px-6 overflow-hidden"
@@ -86,8 +89,10 @@ const Header: React.FC = () => {
                     to={item.id}
                     smooth
                     duration={500}
+                    spy={true}
+                    activeClass="active"
                     onClick={closeMenu}
-                    className="block text-blue-200 font-medium hover:text-blue-600 cursor-pointer transition"
+                    className="block text-blue-200 font-medium hover:text-yellow-200 cursor-pointer transition [&.active]:text-yellow-200 [&.active]:font-bold "
                   >
                     {item.label}
                   </Link>
