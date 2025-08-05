@@ -41,7 +41,7 @@ const About: React.FC = () => (
       {/* Image Panel */}
       <div className="lg:w-1/2 mb-8 lg:mb-0 flex justify-center lg:justify-start">
         <img
-          src="/om-avatar2.png"
+          src="/om-avatar1.png"
           alt="Om Amberkar"
           className="w-98 rounded-full shadow-lg bg-gradient-to-b from-blue-950 to-black border-4 border-blue-500 bottom-3 hover:scale-105 transition-transform duration-300 ease-in-out"
         />
