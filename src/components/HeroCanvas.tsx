@@ -151,7 +151,7 @@ function AtomScene() {
 
 export default function AtomCanvas() {
   return (
-    <Canvas camera={{ position: [0, 0, 3], fov: 45 }} style={{ height: 400 }}>
+    <Canvas camera={{ position: [0, 0, 3], fov: 45 }} style={{ height: 400 , border:"2px solid blue", borderRadius:"10px", background:"black"}} >
       <Float speed={0.5} rotationIntensity={0.1} floatIntensity={1}>
         <AtomScene />
       </Float>

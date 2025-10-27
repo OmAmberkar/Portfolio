@@ -6,7 +6,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
-import PhoneInput from "react-phone-input-2";
+import PhoneInput, { CountryData } from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useForm } from "@formspree/react";
 
@@ -21,10 +21,14 @@ const InnovativeMessage = () => (
 );
 
 // Overlay with either form or message, enhanced with email MX-check and phone-country picker
-const ContactOverlay = ({ onSubmit, state }: any) => {
+const ContactOverlay = ({ onSubmit, state }: {
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  state: any;
+}) => {
   const [emailError, setEmailError] = useState("");
   const [phone, setPhone] = useState("");
-
+  const [error , setError] = useState("");
+  
   // Email MX-record lookup via Google DNS-over-HTTPS
   const handleEmailBlur = async (e: React.FocusEvent<HTMLInputElement>) => {
     const input = e.target.value.trim();
@@ -47,6 +51,29 @@ const ContactOverlay = ({ onSubmit, state }: any) => {
     }
   };
 
+  const handlePhoneChange =( value:string ,country:CountryData ) =>{
+     // Strip non-digits
+    const digitsOnly = value.replace(/\D/g, "");
+
+    // Remove country code digits (for +91 it's '91')
+    const numberWithoutCountry = digitsOnly.slice(country.dialCode.length);
+
+    // Enforce maximum 10 digits
+    if (numberWithoutCountry.length <= 10) {
+      setPhone(value);
+    }
+
+    // Validation messages like email
+    if (numberWithoutCountry.length === 0) {
+      setError("");
+    } else if (numberWithoutCountry.length < 10) {
+      setError("❌ Phone number must be exactly 10 digits.");
+    } else if (numberWithoutCountry.length > 10) {
+      setError("⚠️ Phone number cannot exceed 10 digits.");
+    } else {
+      setError("");
+    }
+  }
   return (
     <div className="relative inset-0 flex flex-col items-center justify-center pointer-events-none">
       <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent">
@@ -98,7 +125,7 @@ const ContactOverlay = ({ onSubmit, state }: any) => {
             <PhoneInput
               country="in"
               value={phone}
-              onChange={setPhone}
+              onChange={handlePhoneChange}
               enableSearch
               inputProps={{ name: "number", required: true }}
               containerClass="!w-full"
@@ -107,7 +134,7 @@ const ContactOverlay = ({ onSubmit, state }: any) => {
               dropdownClass="!bg-blue-950 !hover:bg-transparent !text-blue-200 !rounded-b-2xl"
               searchClass="!bg-blue-950 !hover:bg-transparent !text-blue-100 !rounded-t-2xl"
               searchStyle={{ borderRadius: "1rem" }}
-            />
+            />{error && <p className="text-red-500 text-sm mt-1">{error}</p>}
           </div>
 
           {/* Message */}
